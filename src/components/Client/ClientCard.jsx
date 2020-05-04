@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "../UI/index";
+import { CallClient, WriteToClient } from "../UI/index";
 
 class ClientCard extends React.Component {
   constructor(props) {
@@ -13,26 +13,20 @@ class ClientCard extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="row my-1">
         <div>
           <img
             src={require(`assets/img/${this.client.photo_id}.png`)}
             alt={`${this.fullName()}'s profile`}
           />
         </div>
-        <div>
+        <div className="card-detail">
           <p>
             {this.fullName()}, {this.client.profession}
           </p>
-          <p>{this.client.phoneNumber}</p>
-          <p>{this.client.email}</p>
-        </div>
-        <div>
-          <Button
-            text={this.fullName()}
-            className="ui_btn"
-            targetLink="http://www.google.com"
-          />
+
+          <CallClient {...this.client} />
+          <WriteToClient {...this.client} />
         </div>
       </div>
     );

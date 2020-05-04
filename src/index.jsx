@@ -1,19 +1,13 @@
+import "bootstrap/dist/css/bootstrap.css";
 import "assets/styles/general.scss";
 
 import React from "react";
 import ReactDOM from "react-dom";
-import ClientCard from "./components/Client/ClientCard";
-
-import { allClients } from "./components/Client/ClientList";
+import ClientListView from "./components/Client/ClientListView";
 
 class App extends React.Component {
   render() {
-    console.log(allClients());
-    const content = allClients().map((el) => {
-      console.log(el.firstName);
-      return <ClientCard {...el} />;
-    });
-    return content;
+    return <ClientListView />;
   }
 }
 

@@ -1,22 +1,35 @@
 import React from "react";
 
-export class Button extends React.Component {
-  constructor(props) {
-    super(props);
-    this.onClick = this.onClick.bind(this);
-    this.targetLink = this.props;
-  }
-  onClick = () => {
-    console.log("this clicked");
-    window.location = this.targetLink;
-  };
+export class CallClient extends React.Component {
   render() {
-    const { text } = this.props;
-    const { className } = this.props;
+    const text = `Call ${this.props.firstName}`;
     return (
-      <button class={className} onclick={this.onclick}>
+      <a
+        className="btn btn-outline-warning"
+        target="_blank"
+        rel="noopener noreferrer"
+        href={`callto:${this.props.phoneNumber}`}
+        title={text}
+      >
         {text}
-      </button>
+      </a>
+    );
+  }
+}
+
+export class WriteToClient extends React.Component {
+  render() {
+    const text = `Write to ${this.props.firstName}`;
+    return (
+      <a
+        className="btn btn-outline-warning"
+        target="_blank"
+        rel="noopener noreferrer"
+        href={`mailto:${this.props.email}`}
+        title={text}
+      >
+        {text}
+      </a>
     );
   }
 }
