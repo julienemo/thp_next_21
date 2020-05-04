@@ -4,8 +4,8 @@ import ClientCard from "./ClientCard";
 
 class ClientListView extends React.Component {
   render() {
-    const content = ClientList().map((el) => {
-      return <ClientCard {...el} />;
+    const content = ClientList().map((el, index) => {
+      return <ClientCard {...el} key={index.toString()} />;
     });
     return content;
   }
