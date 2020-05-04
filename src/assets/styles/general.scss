@@ -11,17 +11,11 @@ img {
   object-position: top;
   @include round-border();
 }
+
 a {
   margin: 1em;
 }
+
 .card-detail {
   margin-left: 1em;
-}
-
-button {
-  margin: 1em;
-  padding: 1em;
-  border: 0;
-  width: 10em;
-  @include round-border();
 }

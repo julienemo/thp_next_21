@@ -1,3 +1,7 @@
+### Client List
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -66,3 +70,37 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+---
+
+#### Notes
+
+1. Still looking into how to put react projects on github page.
+
+- Github page only works when `index.html` is at root
+- React project's `index.html` is not at root
+
+2. For CSS
+
+- `npm install node-sass` (otherwise can't use scss)
+- `npm install --save bootstrap`, doc[here](https://create-react-app.dev/docs/adding-bootstrap/)
+- in `index.js`, `import "bootstrap/dist/css/bootstrap.css"`
+- in CSS, do nothing
+- in jsx, use `className` instead of `class`, and put exactly what one would put in `class` in `className`
+
+3. For assets
+
+- put `NODE_PATH='src/'` in `.env`
+- then in any file, when importing any assets, use "absolute path" as of the node_path
+
+4. Pass an object as component props (ex: `ClientListView.jsx` of this project)
+
+- pass `{...theObject}` as a whole props, without props property. Can add other props property after this if needed. (ex:`ClientListView.jsx` )
+
+5. Calling a dynamic image in component without prior `import`
+
+- `` <img src={require(`path/${interpolation}.png`)}/> ``
+
+6. Assigning to an object properties that use existing properties.
+
+- should not do `` let machin = {name: "somename", id: `client_${name}`} ``, but rather `` let machin = {name: "somename}; machin.id=`client_${machin.name}`; ``
