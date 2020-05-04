@@ -1,16 +1,20 @@
+import "assets/styles/general.scss";
+
 import React from "react";
 import ReactDOM from "react-dom";
-import Paragraphs from "./components/Paragraphs";
-import "./assets/styles/general.scss";
+import MixedComponent from "./components/MixedComponents";
+
+import cat_on_balcony from "assets/img/cat_on_balcony.png";
+import asperges from "assets/img/asperges.png";
+import lantern from "assets/img/lantern.png";
+
 class App extends React.Component {
   render() {
     return (
       <div>
-        <Paragraphs text="a" />
-        <h1>Hello world</h1>
-        <Paragraphs text="b" />
-        <p>How are you</p>
-        <Paragraphs text="c" />
+        <MixedComponent text="cat" title="Cat" src={cat_on_balcony} />
+        <MixedComponent text="food" title="Food" src={asperges} />
+        <MixedComponent text="lantern" title="Lantern" src={lantern} />
       </div>
     );
   }
